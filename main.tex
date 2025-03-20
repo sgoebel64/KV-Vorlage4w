@@ -1,0 +1,62 @@
+\documentclass[12pt,a4paper,pdftex]{article}
+
+\usepackage[utf8]{inputenc}
+%\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{eurosym} \DeclareUnicodeCharacter{20AC}{\euro}
+\usepackage{color}
+
+\usepackage[pdftitle={Vorlagen für KV-Diagramme},pdfauthor={Stefan Goebel},pdfstartview=FitH, colorlinks=true, linkcolor=black, urlcolor=black]{hyperref}
+
+\setlength{\parindent}{0pt}  \linespread{1.1}
+%\setlength{\parskip}{2ex plus0.5ex minus0.5ex}
+\usepackage{geometry}
+\geometry{a4paper,left=15mm,right=15mm,bottom=15mm,top=15mm,bindingoffset=5mm,includehead,includefoot}
+
+\usepackage{fancyhdr} \pagestyle{fancy} \renewcommand{\headwidth}{\textwidth}
+\renewcommand{\headrulewidth}{0.4pt} \renewcommand{\footrulewidth}{0.4pt}
+\lhead{LF04 --- Digitaltechnik} \chead{LS4} \rhead{KV-Diagramme} 
+\lfoot{\small \copyright\ Stefan Goebel} \cfoot{\url{https://wiki.sgoebel.de}} \rfoot{}
+
+% KV-Diagramm mit Variablen vorgeben
+% einfachere Darstellung zur Nummerierung 
+\newcommand{\POS}[1]{\tiny \textcolor{white}{#1}}
+\def\KV{
+	\renewcommand{\arraystretch}{1.7}
+	\begin{tabular}{p{5mm}|p{5mm}|p{5mm}|p{5mm}|p{5mm}|p{5mm}}
+		& {$\bar d$} &\multicolumn{2}{c|}{$d$}& {$\bar d$} & \\	 \hline
+		$\bar b$ & \POS{0} & \POS{1} & \POS{3} & \POS{2} & \multirow{2}{*}{$\bar a$} \\ \cline{1-5}
+		\multirow{2}{*}{$b$}	& \POS{4} & \POS{5} & \POS{7} & \POS{6} &  \\ \cline{2-6}
+		& \POS{12} & \POS{13} & \POS{15} & \POS{14} & \multirow{2}{*}{$a$} \\  \cline{1-5}
+		$\bar b$ & \POS{8} & \POS{9} & \POS{11} & \POS{10} & \\ \hline 
+		&\multicolumn{2}{c|}{$\bar c$}&\multicolumn{2}{c|}{$c$}& \\
+	\end{tabular}
+}
+
+\def\FIVELINES{
+	\begin{tabular}{p{0.95\textwidth}}
+	\\ \hline
+	\\[2ex] \hline
+	\\[2ex] \hline
+	\\[2ex] \hline
+	\\[2ex] \hline
+\end{tabular}
+}
+
+
+\begin{document}
+	\begin{minipage}[c]{0.3\textwidth} \begin{center} \KV \end{center} \end{minipage} \hfill
+	\begin{minipage}[c]{0.6\textwidth} \FIVELINES \end{minipage}
+
+	\begin{minipage}[c]{0.3\textwidth} \begin{center} \KV \end{center} \end{minipage} \hfill
+	\begin{minipage}[c]{0.6\textwidth} \FIVELINES \end{minipage}
+
+	\begin{minipage}[c]{0.3\textwidth} \begin{center} \KV \end{center} \end{minipage} \hfill
+	\begin{minipage}[c]{0.6\textwidth} \FIVELINES \end{minipage}
+
+	\begin{minipage}[c]{0.3\textwidth} \begin{center} \KV \end{center} \end{minipage} \hfill
+	\begin{minipage}[c]{0.6\textwidth} \FIVELINES \end{minipage}
+
+\end{document}
